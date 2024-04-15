@@ -27,6 +27,10 @@ const ensureAuth = function (req, res, next) {
     next();
 }
 
+app.get('/', (req, res) => {
+    res.send('Welcome to the Guitar API!');
+})
+
 app.get('/guitars', ensureAuth, function (req, res, next) {
     res.json(guitars).status(200);
 });
